@@ -17,8 +17,14 @@ function App() {
     <div className="main">
       <Route path="/" component={Home} exact/>
       {
-        featuredCourses.map(course=>(
-          <Route path={`/detail/${course.name}`} render={() => (
+        popularCourses.map(course=>(
+          <Route path={`/detail/${course.name.replace(/\s/g, '-')}`} render={() => (
+            <Detail id={course.id} />)} exact/>
+        ))
+      }
+      {
+        offerCourses.map(course=>(
+          <Route path={`/detail/${course.name.replace(/\s/g, '-')}`} render={() => (
             <Detail id={course.id} />)} exact/>
         ))
       }

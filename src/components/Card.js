@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 
 function Card({image, author, offer, free, offerPrice, price, title, description, id}){
     return(
-        <Link to={`/detail/${title}`}> 
+        <Link to={`/detail/${title.replace(/\s/g, '-')}`}> 
         <div className="card">
             <img src={image} alt="" className="cardImage" />
             <div className="marked flex">
